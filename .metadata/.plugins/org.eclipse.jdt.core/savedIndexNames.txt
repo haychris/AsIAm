@@ -1,0 +1,4 @@
+INDEX VERSION 1.126+/home/chris/Projects/Android/AsIAm/.metadata/.plugins/org.eclipse.jdt.core
+937804386.index
+1270315800.index
+4262182181.index
