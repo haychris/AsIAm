@@ -90,26 +90,26 @@ public class CameraPreview extends SurfaceView implements SurfaceHolder.Callback
         setCameraDisplayOrientation((Activity)getContext(), mCameraId, mCamera);
         // start preview with new settings
         
-//        try {
-//        	mCamera.setPreviewDisplay(mHolder);
-//          	mCamera.startPreview();
-//
-//        } catch (Exception e){
-//        	Log.d(TAG, "Error starting camera preview: " + e.getMessage());
-//        }
-        
-        Thread preview_thread = new Thread(new Runnable() {
-            @Override
-            public void run() {
-            	try {
-                    mCamera.setPreviewDisplay(mHolder);
-                    mCamera.startPreview();
+        try {
+        	mCamera.setPreviewDisplay(mHolder);
+          	mCamera.startPreview();
 
-                } catch (Exception e){
-                    Log.d(TAG, "Error starting camera preview: " + e.getMessage());
-                }               }
-            }, "preview_thread");
-         preview_thread.start(); 
+        } catch (Exception e){
+        	Log.d(TAG, "Error starting camera preview: " + e.getMessage());
+        }
+        
+//        Thread preview_thread = new Thread(new Runnable() {
+//            @Override
+//            public void run() {
+//            	try {
+//                    mCamera.setPreviewDisplay(mHolder);
+//                    mCamera.startPreview();
+//
+//                } catch (Exception e){
+//                    Log.d(TAG, "Error starting camera preview: " + e.getMessage());
+//                }               }
+//            }, "preview_thread");
+//         preview_thread.start(); 
         
     
     }

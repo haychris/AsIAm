@@ -297,7 +297,6 @@ public class FullscreenPicture extends Activity {
 		                    front.stopPreview();
 		                    front.release();
 		                    front = null;
-		                    //doPhotoStuff();
 	                	}
 	                	if (back != null) {
 	                		back.takePicture(null, null, mPicture);
