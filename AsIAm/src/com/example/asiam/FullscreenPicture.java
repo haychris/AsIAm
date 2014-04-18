@@ -294,9 +294,7 @@ public class FullscreenPicture extends Activity {
 	                	if (front != null) {
 		                    // get an image from the camera
 		                    front.takePicture(null, null, mPicture);
-		                    front.stopPreview();
-		                    front.release();
-		                    front = null;
+		                    
 		                    //doPhotoStuff();
 	                	}
 	                	if (back != null) {
@@ -316,8 +314,8 @@ public class FullscreenPicture extends Activity {
 
 	    @Override
 	    public void onPictureTaken(byte[] data, Camera camera) {
-
-	        File pictureFile = getOutputMediaFile(MEDIA_TYPE_IMAGE);
+	    	
+	        File pictureFile = getOutputMediaFile(MEDIA_TYPE_IMAGE, bigPicture);
 	        if (pictureFile == null){
 	            Log.d(TAG, "Error creating media file, check storage permissions: "// +
 	                //e.getMessage());
@@ -334,23 +332,28 @@ public class FullscreenPicture extends Activity {
 	        } catch (IOException e) {
 	            Log.d(TAG, "Error accessing file: " + e.getMessage());
 	        }
+	        camera.stopPreview();
+            camera.release();
+            camera = null;
 	    }
 	};
 
 	public static final int MEDIA_TYPE_VIDEO = 2;
 
 	/** Create a file Uri for saving an image or video */
-	private static Uri getOutputMediaFileUri(int type){
-	      return Uri.fromFile(getOutputMediaFile(type));
+	private static Uri getOutputMediaFileUri(int type, Context context){
+	      return Uri.fromFile(getOutputMediaFile(type, context));
 	}
 
 	/** Create a File for saving an image or video */
-	private static File getOutputMediaFile(int type){
+	private static File getOutputMediaFile(int type, Context context){
 	    // To be safe, you should check that the SDCard is mounted
 	    // using Environment.getExternalStorageState() before doing this.
 
-	    File mediaStorageDir = new File(Environment.getExternalStoragePublicDirectory(
-	              Environment.DIRECTORY_PICTURES), "com.example.asiam");
+		File mediaStorageDir = context.getDir("com.example.asiam", 0);
+//	    File mediaStorageDir = new File(Environment.getExternalStoragePublicDirectory(
+//	              Environment.DIRECTORY_PICTURES), "com.example.asiam");
+	    
 	    // This location works best if you want the created images to be shared
 	    // between applications and persist after your app has been uninstalled.
 
@@ -374,7 +377,6 @@ public class FullscreenPicture extends Activity {
 	    } else {
 	        return null;
 	    }
-
 	    return mediaFile;
 	}
 	 

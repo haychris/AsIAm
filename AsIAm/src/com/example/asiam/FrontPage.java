@@ -1,5 +1,10 @@
 package com.example.asiam;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
 import android.app.Activity;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
@@ -7,10 +12,15 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
+import android.graphics.Matrix;
 import android.graphics.drawable.ColorDrawable;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -20,6 +30,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.support.v4.widget.DrawerLayout;
 import android.widget.ArrayAdapter;
+import android.widget.GridLayout;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -35,12 +47,13 @@ public class FrontPage extends ActionBarActivity
      * Used to store the last screen title. For use in {@link #restoreActionBar()}.
      */
     private CharSequence mTitle;
+    Context bigPicture;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_front_page);
-
+        bigPicture = getApplicationContext();
         mNavigationDrawerFragment = (NavigationDrawerFragment)
                 getSupportFragmentManager().findFragmentById(R.id.navigation_drawer);
         mTitle = getTitle();
@@ -165,22 +178,51 @@ public class FrontPage extends ActionBarActivity
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                 Bundle savedInstanceState) {
             View rootView = inflater.inflate(R.layout.fragment_front_page, container, false);
-            TextView textView = (TextView) rootView.findViewById(R.id.section_label);
+    		GridLayout layout = (GridLayout) rootView.findViewById(R.id.image_container);
+            TextView textView = new TextView(rootView.getContext());
             switch(getArguments().getInt(ARG_SECTION_NUMBER)) {
             	case 1:
             		textView.setText(getString(R.string.title_section1));
+            		layout.addView(textView);
             		break;
             	case 2:
             		textView.setText(getString(R.string.title_section2));
+            		layout.addView(textView);
             		break;
             	case 3:
             		textView.setText(getString(R.string.title_section3));
+            		layout.addView(textView);
             		break;
             	case 4:
-            		textView.setText(getString(R.string.title_section4));
-            		break;
+            		Context tempContext = rootView.getContext();
+            		File dir = tempContext.getDir("com.example.asiam", 0);
+            		Log.d("Attempt", "" + dir.listFiles().length);
+            		for (File img : dir.listFiles()) {
+            			FileInputStream fis = null;
+            			try {
+							fis = new FileInputStream(img);
+						} catch (FileNotFoundException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+            			Bitmap bm = BitmapFactory.decodeStream(fis);
+            			Matrix rotateMatrix = new Matrix();
+            			rotateMatrix.postRotate(270);
+            			Bitmap rotatedBitmap = Bitmap.createBitmap(bm, 0, 0, bm.getWidth(), bm.getHeight(), rotateMatrix, false);
+            			bm = Bitmap.createScaledBitmap(rotatedBitmap, 250, 250, true);
+            			try {
+							fis.close();
+						} catch (IOException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+            			ImageView myImage = new ImageView(tempContext);
+            			myImage.setImageBitmap(bm);
+            			layout.addView(myImage);
+            			Log.d("Display", "displayed: " + img);
+            		}
     			default:
-    				textView.setText(Integer.toString(getArguments().getInt(ARG_SECTION_NUMBER)));
+    				//textView.setText(Integer.toString(getArguments().getInt(ARG_SECTION_NUMBER)));
     				break;
             	
             }
