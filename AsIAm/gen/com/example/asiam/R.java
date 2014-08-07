@@ -19,6 +19,10 @@ public final class R {
     public static final class array {
         public static final int pref_example_list_titles=0x7f0d0000;
         public static final int pref_example_list_values=0x7f0d0001;
+        public static final int pref_montage_frequency_titles=0x7f0d0004;
+        public static final int pref_montage_frequency_values=0x7f0d0005;
+        public static final int pref_picture_frequency_titles=0x7f0d0006;
+        public static final int pref_picture_frequency_values=0x7f0d0007;
         public static final int pref_sync_frequency_titles=0x7f0d0002;
         public static final int pref_sync_frequency_values=0x7f0d0003;
     }
@@ -1440,15 +1444,15 @@ containing a value of this type.
         /**  Example settings for Notifications 
          */
         public static final int pref_header_notifications=0x7f0b0031;
-        public static final int pref_ringtone_silent=0x7f0b0034;
         public static final int pref_title_add_friends_to_messages=0x7f0b002d;
         public static final int pref_title_display_name=0x7f0b002b;
+        public static final int pref_title_montage_frequency=0x7f0b0033;
         public static final int pref_title_new_message_notifications=0x7f0b0032;
-        public static final int pref_title_ringtone=0x7f0b0033;
+        public static final int pref_title_new_picture_notifications=0x7f0b0034;
+        public static final int pref_title_picture_frequency=0x7f0b0035;
         public static final int pref_title_social_recommendations=0x7f0b0029;
         public static final int pref_title_sync_frequency=0x7f0b002f;
         public static final int pref_title_system_sync_settings=0x7f0b0030;
-        public static final int pref_title_vibrate=0x7f0b0035;
         /**  Strings related to login 
          */
         public static final int prompt_email=0x7f0b001d;
