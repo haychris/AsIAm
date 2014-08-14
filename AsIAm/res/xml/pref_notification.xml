@@ -10,7 +10,7 @@
         android:title="@string/pref_title_new_message_notifications" />
 
     <ListPreference
-        android:defaultValue="-1"
+        android:defaultValue="30000"
         android:entries="@array/pref_picture_frequency_titles"
         android:entryValues="@array/pref_picture_frequency_values"
         android:key="picture_frequency"

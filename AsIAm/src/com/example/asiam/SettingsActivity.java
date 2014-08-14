@@ -41,12 +41,14 @@ public class SettingsActivity extends PreferenceActivity {
 	 * shown on tablets.
 	 */
 	private static final boolean ALWAYS_SIMPLE_PREFS = false;
+	private static Context superContext;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
         getActionBar().setBackgroundDrawable(new ColorDrawable(0xFF0099cc));
 		setupActionBar();
+		superContext = this;
 	}
 
 	/**
@@ -171,6 +173,11 @@ public class SettingsActivity extends PreferenceActivity {
 		public boolean onPreferenceChange(Preference preference, Object value) {
 			String stringValue = value.toString();
 
+			if (stringValue.equals("picture_frequency")) {
+                Timer timer = new Timer();
+                timer.startTimer(superContext);
+            }
+			
 			if (preference instanceof ListPreference) {
 				// For list preferences, look up the correct display value in
 				// the preference's 'entries' list.

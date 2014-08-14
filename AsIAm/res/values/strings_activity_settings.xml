@@ -37,11 +37,11 @@
         <item>Never</item>
     </string-array>
     <string-array name="pref_sync_frequency_values">
-        <item>15</item>
-        <item>30</item>
-        <item>60</item>
-        <item>180</item>
-        <item>360</item>
+        <item>900000</item>
+        <item>1800000</item>
+        <item>3600000</item>
+        <item>10800000</item>
+        <item>21600000</item>
         <item>-1</item>
     </string-array>
 
@@ -58,14 +58,15 @@
         <item>Never</item>
     </string-array>
     <string-array name="pref_montage_frequency_values">
-        <item>188</item>
-        <item>720</item>
-        <item>8766</item>
+        <item>604800000</item>
+        <item>2629800000</item>
+        <item>31557600000</item>
         <item>-1</item>
     </string-array>
 	<string name="pref_title_new_picture_notifications">Picture Notifications</string>
     <string name="pref_title_picture_frequency">Picture Frequency</string>
     <string-array name="pref_picture_frequency_titles">
+        <item>Thirty Seconds</item>
         <item>Twice a Day</item>
         <item>Daily</item>
         <item>Twice a Week</item>
@@ -75,12 +76,13 @@
         <item>Never</item>
     </string-array>
     <string-array name="pref_picture_frequency_values">
-        <item>12</item>
-        <item>24</item>
-        <item>94</item>
-        <item>188</item>
-        <item>720</item>
-        <item>8766</item>
+        <item>30000</item>
+        <item>43200000</item>
+        <item>86400000</item>
+        <item>302400000</item>
+        <item>604800000</item>
+        <item>2629800000</item>
+        <item>31557600000</item>
         <item>-1</item>
     </string-array>
     
