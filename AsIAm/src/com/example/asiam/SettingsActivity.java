@@ -42,6 +42,7 @@ public class SettingsActivity extends PreferenceActivity {
 	 */
 	private static final boolean ALWAYS_SIMPLE_PREFS = false;
 	private static Context superContext;
+	private static boolean firstLoad;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +50,7 @@ public class SettingsActivity extends PreferenceActivity {
         getActionBar().setBackgroundDrawable(new ColorDrawable(0xFF0099cc));
 		setupActionBar();
 		superContext = this;
+		firstLoad = true;
 	}
 
 	/**
@@ -173,10 +175,7 @@ public class SettingsActivity extends PreferenceActivity {
 		public boolean onPreferenceChange(Preference preference, Object value) {
 			String stringValue = value.toString();
 
-			if (stringValue.equals("picture_frequency")) {
-                Timer timer = new Timer();
-                timer.startTimer(superContext);
-            }
+			
 			
 			if (preference instanceof ListPreference) {
 				// For list preferences, look up the correct display value in
@@ -196,6 +195,17 @@ public class SettingsActivity extends PreferenceActivity {
 				// simple string representation.
 				preference.setSummary(stringValue);
 			}
+			
+			if (preference.getKey().equals("picture_frequency")) {
+				if (!firstLoad) {
+					Timer timer = new Timer();
+					timer.startTimer(superContext, Integer.parseInt(stringValue)*1000);
+				}
+				else {
+					firstLoad = false;
+				}
+            }
+			
 			return true;
 		}
 	};
