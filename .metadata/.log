@@ -8196,3 +8196,8 @@ java.lang.NullPointerException
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:584)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1438)
 	at org.eclipse.equinox.launcher.Main.main(Main.java:1414)
+
+!ENTRY org.eclipse.egit.ui 4 0 2014-08-14 20:33:36.280
+!MESSAGE Checkout conflict: Your local changes to 
+.metadata/.plugins/org.eclipse.core.resources/.projects/AsIAm/.indexes/properties.index
+would be overwritten by merge.  Aborting. Commit your changes or stash them before you can merge.
