@@ -37,11 +37,11 @@
         <item>Never</item>
     </string-array>
     <string-array name="pref_sync_frequency_values">
-        <item>900000</item>
-        <item>1800000</item>
-        <item>3600000</item>
-        <item>10800000</item>
-        <item>21600000</item>
+        <item>900</item>
+        <item>1800</item>
+        <item>3600</item>
+        <item>10800</item>
+        <item>21600</item>
         <item>-1</item>
     </string-array>
 
@@ -58,9 +58,9 @@
         <item>Never</item>
     </string-array>
     <string-array name="pref_montage_frequency_values">
-        <item>604800000</item>
-        <item>2629800000</item>
-        <item>31557600000</item>
+        <item>604800</item>
+        <item>2629800</item>
+        <item>31557600</item>
         <item>-1</item>
     </string-array>
 	<string name="pref_title_new_picture_notifications">Picture Notifications</string>
@@ -76,13 +76,13 @@
         <item>Never</item>
     </string-array>
     <string-array name="pref_picture_frequency_values">
-        <item>30000</item>
-        <item>43200000</item>
-        <item>86400000</item>
-        <item>302400000</item>
-        <item>604800000</item>
-        <item>2629800000</item>
-        <item>31557600000</item>
+        <item>30</item>
+        <item>43200</item>
+        <item>86400</item>
+        <item>302400</item>
+        <item>604800</item>
+        <item>2629800</item>
+        <item>31557600</item>
         <item>-1</item>
     </string-array>
     

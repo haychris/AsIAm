@@ -63,8 +63,8 @@ public class FrontPage extends ActionBarActivity
                 R.id.navigation_drawer,
                 (DrawerLayout) findViewById(R.id.drawer_layout));
         
-        Timer timer = new Timer();
-        timer.startTimer(this);
+        //Timer timer = new Timer();
+        //timer.startTimer(this);
     }
 
     

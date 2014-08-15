@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">AsIAm</string>
+    <string name="title_section1">Manage Pictures</string>
+    <string name="title_section2">Video</string>
+    <string name="title_section3">Scrapbook</string>
+    <string name="title_section4">Gallery</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="action_example">Example action</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_picture">Picture</string>
+    <string name="capture">Capture</string>
+    <string name="close">Close</string>
+    <string name="title_activity_fullscreen_picture">FullscreenPicture</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="pic_notification_title_template">Pic: %1$s</string>
+    <string name="pic_notification_placeholder_text_template">You said %1$s and lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam non enim magna. Morbi dictum, velit vel semper venenatis, magna odio volutpat velit, at ullamcorper nulla lacus sed turpis. Pellentesque vitae metus elit, nec tincidunt tellus. Integer sed nisl sem, ullamcorper ornare lacus. Duis ac mauris sed massa congue volutpat. Donec sed erat sit amet turpis viverra rhoncus sit amet nec magna. Donec lacinia ligula at libero volutpat volutpat nec nec tortor.</string>
+    <string name="pic_notification_text">Time to take a picture and add to your streak!</string>
+    <string name="action_later">Snooze</string>
+    <string name="action_reply">Reply</string>
+
+</resources>

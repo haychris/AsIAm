@@ -19,4 +19,16 @@
 		<item value="15" key="DIALOG_X_ORIGIN"/>
 		<item value="1|Ubuntu|11.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
 	</section>
+	<section name="ShowViewDialog">
+		<item value="374" key="DIALOG_WIDTH"/>
+		<item value="org.eclipse.team.sync.views.SynchronizeView" key="ShowViewDialog.STORE_SELECTED_VIEW_ID"/>
+		<item value="73" key="DIALOG_Y_ORIGIN"/>
+		<item value="490" key="DIALOG_X_ORIGIN"/>
+		<item value="443" key="DIALOG_HEIGHT"/>
+		<item value="1|Ubuntu|11.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
+		<list key="ShowViewDialog.STORE_EXPANDED_CATEGORIES_ID">
+			<item value="org.eclipse.egit.ui.GitCategory"/>
+			<item value="org.eclipse.team.ui"/>
+		</list>
+	</section>
 </section>
