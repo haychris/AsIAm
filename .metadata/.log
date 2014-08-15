@@ -9479,3 +9479,43 @@ java.lang.ClassNotFoundException: org.eclipse.e4.ui.internal.workbench.addons.Ha
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:584)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1438)
 	at org.eclipse.equinox.launcher.Main.main(Main.java:1414)
+
+!ENTRY org.eclipse.egit.core 4 0 2014-08-14 19:43:18.242
+!MESSAGE An exception occurred during push on URI https://github.com/haychris/AsIAm.git: Nothing to push.
+!STACK 0
+org.eclipse.jgit.api.errors.TransportException: Nothing to push.
+	at org.eclipse.jgit.api.PushCommand.call(PushCommand.java:157)
+	at org.eclipse.egit.core.op.PushOperation.run(PushOperation.java:215)
+	at org.eclipse.egit.ui.internal.push.PushOperationUI.execute(PushOperationUI.java:147)
+	at org.eclipse.egit.ui.internal.push.PushOperationUI$1.run(PushOperationUI.java:209)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+Caused by: org.eclipse.jgit.errors.TransportException: Nothing to push.
+	at org.eclipse.jgit.transport.Transport.push(Transport.java:1159)
+	at org.eclipse.jgit.api.PushCommand.call(PushCommand.java:153)
+	... 4 more
+
+!ENTRY org.eclipse.egit.core 4 0 2014-08-14 19:43:30.640
+!MESSAGE An exception occurred during push on URI https://github.com/haychris/AsIAm.git: Nothing to push.
+!STACK 0
+org.eclipse.jgit.errors.TransportException: Nothing to push.
+	at org.eclipse.jgit.transport.Transport.push(Transport.java:1159)
+	at org.eclipse.egit.core.op.PushOperation.run(PushOperation.java:185)
+	at org.eclipse.egit.ui.internal.push.PushWizard$PushJob.run(PushWizard.java:298)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY org.eclipse.egit.ui 4 0 2014-08-14 19:43:30.643
+!MESSAGE Can't connect to any repository: https://github.com/haychris/AsIAm.git (Nothing to push.)
+
+!ENTRY org.eclipse.egit.core 4 0 2014-08-14 19:44:08.522
+!MESSAGE An exception occurred during push on URI https://github.com/haychris/AsIAm.git: Nothing to push.
+!STACK 0
+org.eclipse.jgit.api.errors.TransportException: Nothing to push.
+	at org.eclipse.jgit.api.PushCommand.call(PushCommand.java:157)
+	at org.eclipse.egit.core.op.PushOperation.run(PushOperation.java:215)
+	at org.eclipse.egit.ui.internal.push.PushOperationUI.execute(PushOperationUI.java:147)
+	at org.eclipse.egit.ui.internal.push.PushOperationUI$1.run(PushOperationUI.java:209)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+Caused by: org.eclipse.jgit.errors.TransportException: Nothing to push.
+	at org.eclipse.jgit.transport.Transport.push(Transport.java:1159)
+	at org.eclipse.jgit.api.PushCommand.call(PushCommand.java:153)
+	... 4 more
