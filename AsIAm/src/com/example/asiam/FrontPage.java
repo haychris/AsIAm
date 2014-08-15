@@ -6,6 +6,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 
 import android.app.Activity;
+import android.app.NotificationManager;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
@@ -62,6 +63,17 @@ public class FrontPage extends ActionBarActivity
         mNavigationDrawerFragment.setUp(
                 R.id.navigation_drawer,
                 (DrawerLayout) findViewById(R.id.drawer_layout));
+        Bundle extras = getIntent().getExtras();
+        if (extras != null) {
+        	String id = extras.getString("id");
+        	NotificationManager nm = (NotificationManager) this
+    				.getSystemService(Context.NOTIFICATION_SERVICE);
+        	nm.cancel(id, 0);
+        	Log.e("Timer", id);
+        	if (id.equals("Pic")) {
+        		onNavigationDrawerItemSelected(3);
+        	}
+        }
         
         //Timer timer = new Timer();
         //timer.startTimer(this);

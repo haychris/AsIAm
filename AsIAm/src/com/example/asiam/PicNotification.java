@@ -85,14 +85,16 @@ public class PicNotification {
 
 		Intent takePicIntent = new Intent(context, FullscreenPicture.class);
 		Intent snoozeIntent = new Intent(context, Snooze.class);
+		snoozeIntent.putExtra("id", NOTIFICATION_TAG);
 		Intent galleryIntent = new Intent(context, FrontPage.class);
+		galleryIntent.putExtra("id", NOTIFICATION_TAG);
 		final NotificationCompat.Builder builder = new NotificationCompat.Builder(
 				context)
 
 				// Set appropriate defaults for the notification light, sound,
 				// and vibration.
 				.setDefaults(Notification.DEFAULT_ALL)
-
+				
 				// Set required fields, including the small icon, the
 				// notification title, and text.
 				.setSmallIcon(R.drawable.ic_stat_pic)
