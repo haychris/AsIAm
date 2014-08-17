@@ -1371,8 +1371,33 @@ containing a value of this type.
         public static final int activity_fullscreen_picture=0x7f030018;
         public static final int activity_login=0x7f030019;
         public static final int fragment_front_page=0x7f03001a;
-        public static final int fragment_navigation_drawer=0x7f03001b;
-        public static final int support_simple_spinner_dropdown_item=0x7f03001c;
+        /** 
+    Layout alias to replace the single-pane version of the layout with a
+    two-pane version on Large screens.
+
+    For more on layout aliases, see:
+    http://developer.android.com/training/multiscreen/screensizes.html#TaskUseAliasFilters
+    
+
+    Layout alias to replace the single-pane version of the layout with a
+    two-pane version on Large screens.
+
+    For more on layout aliases, see:
+    http://developer.android.com/training/multiscreen/screensizes.html#TaskUseAliasFilters
+    
+
+    Layout alias to replace the single-pane version of the layout with a
+    two-pane version on Large screens.
+
+    For more on layout aliases, see:
+    http://developer.android.com/training/multiscreen/screensizes.html#TaskUseAliasFilters
+    
+         */
+        public static final int fragment_gallery=0x7f03001f;
+        public static final int fragment_gallery_grid=0x7f03001b;
+        public static final int fragment_gallery_list=0x7f03001c;
+        public static final int fragment_navigation_drawer=0x7f03001d;
+        public static final int support_simple_spinner_dropdown_item=0x7f03001e;
     }
     public static final class menu {
         public static final int front_page=0x7f0e0000;

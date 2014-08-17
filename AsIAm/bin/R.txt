@@ -385,8 +385,11 @@ int layout activity_front_page 0x7f030017
 int layout activity_fullscreen_picture 0x7f030018
 int layout activity_login 0x7f030019
 int layout fragment_front_page 0x7f03001a
-int layout fragment_navigation_drawer 0x7f03001b
-int layout support_simple_spinner_dropdown_item 0x7f03001c
+int layout fragment_gallery 0x7f03001f
+int layout fragment_gallery_grid 0x7f03001b
+int layout fragment_gallery_list 0x7f03001c
+int layout fragment_navigation_drawer 0x7f03001d
+int layout support_simple_spinner_dropdown_item 0x7f03001e
 int menu front_page 0x7f0e0000
 int menu global 0x7f0e0001
 int menu login 0x7f0e0002

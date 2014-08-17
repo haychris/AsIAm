@@ -84,7 +84,7 @@ public class PicNotification {
 				exampleString);
 
 		Intent takePicIntent = new Intent(context, FullscreenPicture.class);
-		Intent snoozeIntent = new Intent(context, Snooze.class);
+		Intent snoozeIntent = new Intent(context, SnoozeService.class);
 		snoozeIntent.putExtra("id", NOTIFICATION_TAG);
 		Intent galleryIntent = new Intent(context, FrontPage.class);
 		galleryIntent.putExtra("id", NOTIFICATION_TAG);

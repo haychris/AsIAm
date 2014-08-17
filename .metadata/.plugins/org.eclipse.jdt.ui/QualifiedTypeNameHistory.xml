@@ -3,4 +3,7 @@
 <fullyQualifiedTypeName name="java.io.Console"/>
 <fullyQualifiedTypeName name="android.util.Log"/>
 <fullyQualifiedTypeName name="android.os.SystemClock"/>
+<fullyQualifiedTypeName name="android.graphics.Color"/>
+<fullyQualifiedTypeName name="android.os.Bundle"/>
+<fullyQualifiedTypeName name="android.app.Activity"/>
 </qualifiedTypeNameHistroy>
