@@ -163,7 +163,7 @@ public class FrontPage extends ActionBarActivity
     	Intent intent = new Intent(this, SettingsActivity.class);
     	startActivity(intent);
     	
-    }
+    } 
     /**
      * A placeholder fragment containing a simple view.
      */
