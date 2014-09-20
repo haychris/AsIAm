@@ -239,7 +239,7 @@ public class NavigationDrawerFragment extends Fragment {
 //        if (mDrawerLayout != null && isDrawerOpen()) {
 //            inflater.inflate(R.menu.global, menu);
 //            showGlobalContextActionBar();
-//        } hi ricardo
+//        }
         super.onCreateOptionsMenu(menu, inflater);
     }
 
