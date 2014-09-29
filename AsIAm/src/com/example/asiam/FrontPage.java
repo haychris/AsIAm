@@ -85,9 +85,11 @@ public class FrontPage extends ActionBarActivity
     public void onNavigationDrawerItemSelected(int position) {
         // update the main content by replacing fragments
         FragmentManager fragmentManager = getSupportFragmentManager();
+        if (position != 3){
         fragmentManager.beginTransaction()
                 .replace(R.id.container, PlaceholderFragment.newInstance(position + 1))
                 .commit();
+        } else fragmentManager.beginTransaction().replace(R.id.container, GalleryManagerFragment.newInstance(position + 1)).commit();
     }
 
     public void onSectionAttached(int number) {
@@ -164,6 +166,62 @@ public class FrontPage extends ActionBarActivity
     	startActivity(intent);
     	
     } 
+    public static class GalleryManagerFragment extends Fragment {
+    	private static final String ARG_SECTION_NUMBER = "section_number";
+    	
+    	public static GalleryManagerFragment newInstance(int sectionNumber) {
+    		GalleryManagerFragment frag = new GalleryManagerFragment();
+			Bundle args = new Bundle();
+	        args.putInt(ARG_SECTION_NUMBER, sectionNumber);
+	        frag.setArguments(args);
+    		return frag;
+    	}
+    	public GalleryManagerFragment(){
+    		
+    	}
+    	@Override
+        public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                Bundle savedInstanceState) {
+            View rootView = inflater.inflate(R.layout.fragment_front_page, container, false);
+    		GridLayout layout = (GridLayout) rootView.findViewById(R.id.image_container);
+            Context tempContext = rootView.getContext();
+    		File dir = tempContext.getDir("com.example.asiam", 0);
+    		Log.d("Attempt", "" + dir.listFiles().length);
+    		for (File img : dir.listFiles()) {
+    			FileInputStream fis = null;
+    			try {
+					fis = new FileInputStream(img);
+				} catch (FileNotFoundException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+					Toast.makeText(tempContext, "Error loading image", Toast.LENGTH_SHORT).show();
+				}
+    			Bitmap bm = BitmapFactory.decodeStream(fis);
+    			Matrix rotateMatrix = new Matrix();
+    			rotateMatrix.postRotate(270);
+    			Bitmap rotatedBitmap = Bitmap.createBitmap(bm, 0, 0, bm.getWidth(), bm.getHeight(), rotateMatrix, false);
+    			bm = Bitmap.createScaledBitmap(rotatedBitmap, 250, 250, true);
+    			try {
+					fis.close();
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+    			ImageView myImage = new ImageView(tempContext);
+    			myImage.setImageBitmap(bm);
+    			layout.addView(myImage);
+    			Log.d("Display", "displayed: " + img);
+    		}
+            return rootView;
+        }
+    	@Override
+        public void onAttach(Activity activity) {
+            super.onAttach(activity);
+            ((FrontPage) activity).onSectionAttached(
+                    getArguments().getInt(ARG_SECTION_NUMBER));
+        }
+    
+    }
     /**
      * A placeholder fragment containing a simple view.
      */
